@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Exploring Automated Tools</string>
+  <key>nodeid</key><string>4ad49752-3899-4fa5-accc-e13aadc713a3</string>
+  <key>modified_time</key><integer>1588516975</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1588510298</integer>
+  <key>order</key><integer>1</integer>
+</dict>
+</node>
