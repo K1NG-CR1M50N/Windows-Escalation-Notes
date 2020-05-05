@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Escalation via Store Passwords</title>
+</head><body><b><u><div style="text-align: center"><span style="font-size: 20pt">Escalation via Store Passwords</span></div></u></b><br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">To start, we can look for all the users on the machine:<br/>
+<b>net users<br/>
+</b></span><img src="1.png" /><b><span style="font-size: 15pt"><br/>
+</span></b><b><span style="font-size: 15pt"><br/>
+<br/>
+</span></b><span style="font-size: 15pt">We can check for our privileges:<br/>
+<b>net user YOUR_USERNAME<br/>
+</b><b>(we are interested in groups like Administrators)</b><br/>
+</span><img src="4.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">A good practice is to check the services with:<br/>
+<b>netstat -ano</b><br/>
+(check if the external services are the same of internal services)<br/>
+As an example, port 445 is only internal here<br/>
+</span><img src="1 2.png" /><br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">We can check for password in registry<br/>
+(Check for something different for password)<br/>
+<b>reg query HKLM /f password /t REG_SZ /s &nbsp;<br/>
+reg query HKCU /f password /t REG_SZ /s<br/>
+</b></span><img src="1 3.png" /><br/>
+<br/>
+<img src="1 4.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">We can query for the whole register:<br/>
+<b>(Windows Autologin)<br/>
+</b></span><img src="1 5.png" /><br/>
+<br/>
+<img src="1 6.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">To port forward a port (E.G. the internal SMB) we will use the plink program<br/>
+(Not the Kali one, might get us some issues)<br/>
+<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html<br/>
+</a></span></body></html>
