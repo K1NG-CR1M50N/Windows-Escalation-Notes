@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Escalation via WSL</string>
+  <key>nodeid</key><string>8edd0560-4f00-43ec-bd41-0c8a06ebdacb</string>
+  <key>modified_time</key><integer>1588691683</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1588688122</integer>
+  <key>order</key><integer>1</integer>
+</dict>
+</node>
