@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Escalation via Autorun</string>
+  <key>nodeid</key><string>fcd5dcce-1440-4bfa-8ad4-646b401b4730</string>
+  <key>modified_time</key><integer>1588868030</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1588863178</integer>
+  <key>order</key><integer>3</integer>
+</dict>
+</node>
