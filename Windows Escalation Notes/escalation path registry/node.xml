@@ -2,6 +2,7 @@
 <node>
 <version>6</version>
 <dict>
+  <key>expanded</key><true/>
   <key>title</key><string>Escalation Path: Registry</string>
   <key>nodeid</key><string>82e86035-5b3a-4496-be65-1a973d5fbdf8</string>
   <key>modified_time</key><integer>1588859668</integer>
