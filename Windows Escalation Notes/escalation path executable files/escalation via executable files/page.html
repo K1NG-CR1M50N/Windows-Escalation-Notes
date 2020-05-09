@@ -2,8 +2,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>regsvc Escalation</title>
-</head><body><b><u><div style="text-align: center"><span style="font-size: 20pt">regsvc Escalation</span></div></u></b><br/>
+<title>Escalation via Executable Files</title>
+</head><body><b><u><div style="text-align: center"><span style="font-size: 20pt">Escalation via Executable Files</span></div></u></b><br/>
+<br/>
 <br/>
 <br/>
 <span style="font-size: 15pt">We need to pass a file from the Windows machine to our Kali machine:<br/>
@@ -38,29 +39,14 @@ Now, pass this executable to the windows machine.<br/>
 You can use whatever <i><b>combo</b></i>&nbsp;you like to do that<br/>
 <br/>
 <br/>
-Move the executable to the Temp folder:<br/>
+<br/>
+Now, that is the crucial part.<br/>
+We are going to overwrite the executable used by the service<br/>
 </span><img src="1 7.png" /><br/>
 <br/>
 <br/>
-<span style="font-size: 15pt">Now we are going to run this command into the command line:<br/>
-The command add a key and set the value of the register <b>ImagePath,<br/>
-</b>the value contains the drivers image file.<br/>
-When we run the register service, the ImagePath will run the executable for us.<br/>
-The /t is the type, REG_EXPAND_SZ is something like "We are going to run a string here"<br/>
 <br/>
-</span><br/>
-<span style="font-size: 15pt"><b>reg add HKLM\SYSTEM\CurrentControlSet\services\regsvc /v ImagePath /t REG_EXPAND_SZ /d c:\temp\x.exe /f<br/>
-<img src="1 8.png" /><br/>
-<br/>
-<br/>
-To finish, start the regsvc:<br/>
-<br/>
-</b>Before:<b><br/>
-</b><b><img src="1 9.png" /><br/>
-<br/>
-<img src="1 10.png" /><br/>
-<br/>
-If we look, the "user" is added to the group!!<br/>
-<img src="1 11.png" /><br/>
-<br/>
-</b></span></body></html>
+<b><span style="font-size: 15pt">To run the service, we can use the sc command:</span><br/>
+</b><img src="1 8.png" /><b><br/>
+</b><b><br/>
+</b><img src="1 9.png" /></body></html>

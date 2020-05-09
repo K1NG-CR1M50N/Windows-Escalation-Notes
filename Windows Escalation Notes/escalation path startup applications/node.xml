@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Escalation Path: Startup Applications</string>
+  <key>nodeid</key><string>e22d3e4c-ab9c-4cf5-ba97-23cdcf1d3266</string>
+  <key>modified_time</key><integer>1589019080</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1589019080</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>13</integer>
+  <key>info_sort</key><string>order</string>
+  <key>icon</key><string>folder.png</string>
+</dict>
+</node>

