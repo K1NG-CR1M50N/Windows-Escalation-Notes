@@ -2,14 +2,14 @@
 <node>
 <version>6</version>
 <dict>
-  <key>title</key><string>Escalation Path: DLL Hijacking</string>
-  <key>nodeid</key><string>ae02002c-84eb-4b31-b65d-c862cd66d372</string>
-  <key>modified_time</key><integer>1589023389</integer>
+  <key>title</key><string>Escalation Path: Service Permissions (Paths)</string>
+  <key>nodeid</key><string>5344a04f-680d-4646-b542-ee4fef8fb9a5</string>
+  <key>modified_time</key><integer>1589037379</integer>
   <key>version</key><integer>6</integer>
   <key>content_type</key><string>text/xhtml+xml</string>
-  <key>created_time</key><integer>1589023389</integer>
+  <key>created_time</key><integer>1589037379</integer>
   <key>info_sort_dir</key><integer>1</integer>
-  <key>order</key><integer>14</integer>
+  <key>order</key><integer>15</integer>
   <key>info_sort</key><string>order</string>
   <key>icon</key><string>folder.png</string>
 </dict>

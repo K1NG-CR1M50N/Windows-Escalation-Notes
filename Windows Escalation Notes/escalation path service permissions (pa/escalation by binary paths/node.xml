@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Escalation by Binary Paths</string>
+  <key>nodeid</key><string>d3fe34b4-c86d-4fee-8640-f37741687685</string>
+  <key>modified_time</key><integer>1589040901</integer>
+  <key>version</key><integer>6</integer>
+  <key>content_type</key><string>text/xhtml+xml</string>
+  <key>created_time</key><integer>1589037498</integer>
+  <key>order</key><integer>1</integer>
+</dict>
+</node>
