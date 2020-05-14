@@ -2,6 +2,7 @@
 <node>
 <version>6</version>
 <dict>
+  <key>expanded</key><false/>
   <key>title</key><string>Escalation Path: getsystem (Meterpreter)</string>
   <key>nodeid</key><string>eccce6d0-4b13-4cd3-98ee-985bc4d64ece</string>
   <key>modified_time</key><integer>1588777322</integer>
